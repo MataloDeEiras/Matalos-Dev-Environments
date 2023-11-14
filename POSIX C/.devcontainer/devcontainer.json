@@ -1,0 +1,14 @@
+{
+  "name": "C",
+  "remoteUser": "developer",
+  "workspaceFolder": "/home/developer/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/developer/workspace,type=bind",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-vscode.cpptools"]
+    }
+  },
+  "postCreateCommand": "echo \"developer\n\" | sudo -k -S chown -R \"${USER:-$(id -un)}\" .",
+  "dockerFile": "Dockerfile",
+  "runArgs": ["--name", "dev-environment-c", "--privileged"]
+}
