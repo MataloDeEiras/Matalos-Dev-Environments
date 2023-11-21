@@ -14,7 +14,7 @@ ARG PYTHONVER="13"
 RUN apt install -y software-properties-common
 RUN add-apt-repository -y ppa:deadsnakes/ppa
 RUN apt update
-RUN DEBIAN_FRONTEND=noninteractive apt install -y python3.${PYTHONVER} python3.${PYTHONVER}-venv python3.${PYTHONVER}-tk
+RUN DEBIAN_FRONTEND=noninteractive apt install -y python3.${PYTHONVER} python3.${PYTHONVER}-venv python3.${PYTHONVER}-tk python3.${PYTHONVER}-dev
 
 # Path correct Python version
 RUN cd /usr/bin && unlink python3
