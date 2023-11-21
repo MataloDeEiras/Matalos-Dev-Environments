@@ -5,6 +5,9 @@ FROM ubuntu:latest
 
 RUN apt update
 
+# Install gcc
+RUN apt install -y build-essential
+
 ARG PYTHONVER="13"
 
 # Install Python
