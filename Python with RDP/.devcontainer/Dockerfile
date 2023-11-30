@@ -3,7 +3,7 @@
 
 FROM ubuntu:latest
 
-ARG PYTHONVER="13"
+ARG PYTHONVER="10"
 ARG USER="developer"
 
 RUN apt update
