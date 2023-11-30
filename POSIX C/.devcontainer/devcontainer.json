@@ -5,10 +5,10 @@
   "workspaceMount": "source=${localWorkspaceFolder},target=/home/developer/workspace,type=bind",
   "customizations": {
     "vscode": {
-      "extensions": ["ms-vscode.cpptools"]
+      "extensions": ["ms-vscode.cpptools-extension-pack"]
     }
   },
-  "postCreateCommand": "echo \"developer\n\" | sudo -k -S chown -R \"${USER:-$(id -un)}\" .",
+  "postCreateCommand": "echo \"developer\n\" | sudo -k -S ./.devcontainer/postCreateCommand.bash",
   "dockerFile": "Dockerfile",
   "runArgs": ["--name", "dev-environment-c", "--privileged"]
 }
