@@ -24,3 +24,5 @@ ENV PATH $PATH:/home/${USER}/flutter/bin
 RUN yes | flutter doctor -v
 
 WORKDIR /home/${USER}/app
+
+COPY .. .

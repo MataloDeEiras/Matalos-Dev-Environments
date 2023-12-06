@@ -18,3 +18,5 @@ RUN useradd -rm -d /home/${USER} -s /bin/bash -g root -G sudo -u 1001 -p "$(open
 USER ${USER}
 
 WORKDIR /home/${USER}/workspace
+
+COPY .. .

@@ -45,3 +45,5 @@ RUN echo "startxfce4" >> /etc/xrdp/startwm.sh
 USER ${USER}
 
 WORKDIR /home/${USER}/workspace
+
+COPY .. .
