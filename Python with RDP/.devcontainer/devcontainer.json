@@ -8,8 +8,8 @@
       "extensions": ["ms-python.python", "kevinrose.vsc-python-indent", "donjayamanne.python-environment-manager", "njpwerner.autodocstring"]
     }
   },
-  "postCreateCommand": "echo \"developer\n\" | sudo -k -S chown -R \"${USER:-$(id -un)}\" . && echo \"developer\n\" | sudo -k -S sed -i -e 's/\r$//' .devcontainer/postCreateCommand.bash && echo \"developer\n\" | sudo -k -S ./.devcontainer/postCreateCommand.bash",
-  "postStartCommand": "echo \"developer\n\" | sudo -k -S sed -i -e 's/\r$//' .devcontainer/postStartCommand.bash && echo \"developer\n\" | sudo -k -S ./.devcontainer/postStartCommand.bash",
+  "postCreateCommand": "echo \"developer\n\" | sudo -k -S ./.devcontainer/postCreateCommand.bash",
+  "postStartCommand": "echo \"developer\n\" | sudo -k -S ./.devcontainer/postStartCommand.bash",
   "context": "..",
   "dockerFile": "Dockerfile",
   "runArgs": ["-p", "3389:3389", "--name", "dev-environment-python", "--privileged"]

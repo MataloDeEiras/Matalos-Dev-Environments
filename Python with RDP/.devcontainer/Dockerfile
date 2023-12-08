@@ -47,3 +47,13 @@ USER ${USER}
 WORKDIR /home/${USER}/workspace
 
 COPY .. .
+
+# Give permissions to current user
+RUN echo "${USER}\n" | sudo -k -S chown -R "${USER:-$(id -un)}" .
+
+# Fix to run scripts
+RUN chmod +x .devcontainer/postCreateCommand.bash
+RUN echo "${USER}\n" | sudo -k -S sed -i -e 's/\r$//' .devcontainer/postCreateCommand.bash
+
+RUN chmod +x .devcontainer/postStartCommand.bash
+RUN echo "${USER}\n" | sudo -k -S sed -i -e 's/\r$//' .devcontainer/postStartCommand.bash
