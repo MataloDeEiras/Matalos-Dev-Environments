@@ -2,7 +2,7 @@
   "name": "C",
   "remoteUser": "developer",
   "workspaceFolder": "/home/developer/workspace",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/home/developer/workspace,type=bind",
+  "workspaceMount": "source=${localWorkspaceFolderBasename},target=/home/developer/workspace,type=volume",
   "customizations": {
     "vscode": {
       "extensions": ["ms-vscode.cpptools-extension-pack"]
