@@ -11,5 +11,5 @@
   "postCreateCommand": "echo \"developer\n\" | sudo -k -S ./.devcontainer/postCreateCommand.bash",
   "context": "..",
   "dockerFile": "Dockerfile",
-  "runArgs": ["--name", "dev-environment-c", "--privileged"]
+  "runArgs": ["--name", "${localWorkspaceFolderBasename}-Dev-Environment", "--privileged"]
 }
