@@ -19,7 +19,7 @@ RUN useradd -rm -d /home/${USER} -s /bin/bash -g root -G sudo -u 1001 -p "$(open
 USER ${USER}
 
 # Install Flutter
-RUN cd /home/${USER} && git clone https://github.com/flutter/flutter.git
+RUN cd /home/${USER} && git clone -b stable https://github.com/flutter/flutter.git
 ENV PATH $PATH:/home/${USER}/flutter/bin
 RUN yes | flutter doctor -v
 
