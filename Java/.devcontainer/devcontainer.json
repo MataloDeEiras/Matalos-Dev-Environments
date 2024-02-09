@@ -1,0 +1,15 @@
+{
+  "name": "Java",
+  "remoteUser": "developer",
+  "workspaceFolder": "/home/developer/workspace",
+  "workspaceMount": "source=${localWorkspaceFolderBasename},target=/home/developer/workspace,type=volume",
+  "customizations": {
+    "vscode": {
+      "extensions": ["vscjava.vscode-java-pack"]
+    }
+  },
+  "postCreateCommand": "echo \"developer\n\" | sudo -k -S ./.devcontainer/postCreateCommand.bash",
+  "context": "..",
+  "dockerFile": "Dockerfile",
+  "runArgs": ["--name", "${localWorkspaceFolderBasename}-Dev-Environment", "--privileged"]
+}
