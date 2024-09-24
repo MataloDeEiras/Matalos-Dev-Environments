@@ -1,0 +1,15 @@
+{
+  "name": "Shopify",
+  "remoteUser": "developer",
+  "workspaceFolder": "/home/developer/workspace",
+  "workspaceMount": "source=${localWorkspaceFolderBasename},target=/home/developer/workspace,type=volume",
+  "customizations": {
+    "vscode": {
+      "extensions": ["shopify.theme-check-vscode"]
+    }
+  },
+  "postCreateCommand": "echo \"developer\n\" | sudo -k -S ./.devcontainer/postCreateCommand.bash",
+  "context": "..",
+  "dockerFile": "Dockerfile",
+  "runArgs": ["-v", "/run/desktop/mnt/host/wslg/.X11-unix:/tmp/.X11-unix", "-v", "/run/desktop/mnt/host/wslg:/mnt/wslg", "-e", "DISPLAY=:0", "-e", "WAYLAND_DISPLAY=wayland-0", "-e", "XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir", "-e", "PULSE_SERVER=/mnt/wslg/PulseServer", "--name", "${localWorkspaceFolderBasename}-Dev-Environment", "--privileged"]
+}
