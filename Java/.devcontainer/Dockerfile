@@ -1,7 +1,6 @@
 FROM ubuntu:latest
 
 # Copying Java from Eclipse-Temurin
-
 ENV JAVA_HOME=/opt/java/openjdk
 COPY --from=eclipse-temurin:latest $JAVA_HOME $JAVA_HOME
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
@@ -9,6 +8,7 @@ ENV PATH="${JAVA_HOME}/bin:${PATH}"
 ARG USER="developer"
 
 RUN apt update
+RUN apt upgrade -y
 
 RUN apt install -y wget curl unzip git sudo nano
 

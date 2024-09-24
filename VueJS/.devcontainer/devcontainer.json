@@ -11,5 +11,5 @@
   "postCreateCommand": "echo \"developer\n\" | sudo -k -S ./.devcontainer/postCreateCommand.bash",
   "context": "..",
   "dockerFile": "Dockerfile",
-  "runArgs": ["--name", "${localWorkspaceFolderBasename}-Dev-Environment", "--privileged"]
+  "runArgs": ["-v", "/run/desktop/mnt/host/wslg/.X11-unix:/tmp/.X11-unix", "-v", "/run/desktop/mnt/host/wslg:/mnt/wslg", "-e", "DISPLAY=:0", "-e", "WAYLAND_DISPLAY=wayland-0", "-e", "XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir", "-e", "PULSE_SERVER=/mnt/wslg/PulseServer", "--name", "${localWorkspaceFolderBasename}-Dev-Environment", "--privileged"]
 }

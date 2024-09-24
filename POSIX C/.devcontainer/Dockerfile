@@ -3,6 +3,7 @@ FROM ubuntu:latest
 ARG USER="developer"
 
 RUN apt update
+RUN apt upgrade -y
 
 # Install gcc
 RUN apt install -y build-essential

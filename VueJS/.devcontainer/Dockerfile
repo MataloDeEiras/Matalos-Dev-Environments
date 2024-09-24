@@ -3,6 +3,7 @@ FROM node:lts-slim
 ARG USER="developer"
 
 RUN apt update
+RUN apt upgrade -y
 
 RUN apt install -y wget curl unzip git sudo nano
 

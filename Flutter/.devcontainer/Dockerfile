@@ -3,6 +3,7 @@ FROM ubuntu:latest
 ARG USER="developer"
 
 RUN apt update
+RUN apt upgrade -y
 
 # Install Flutter development dependencies
 RUN apt install -y clang cmake ninja-build pkg-config libgtk-3-dev
